@@ -93,7 +93,7 @@ export default function PortfolioPage() {
               ]}
               githubUrl="https://github.com/kevin-weitgenant/linkedin-job-hunter"
               liveUrl="https://chromewebstore.google.com/detail/posts-job-hunter-for-link/pchoidhnbdjchhopafgfkijjeomnandl?authuser=0&hl=en"
-              imageUrl="/unnamed.jpg"
+              imageUrl="/Gemini_Generated_Image_uml9emuml9emuml9.png"
             />
 
             <ProjectCard
