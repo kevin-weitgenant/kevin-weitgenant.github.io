@@ -113,7 +113,7 @@ export default function PortfolioPage() {
 
             <ProjectCard
               title="Baymax (Berkeley AgentX Hackathon)"
-              description="Conversational AI agent for structured symptom documentation. Built during the Berkeley AgentX Hackathon. Guides users through a schema-driven dialogue, supports multiple symptom threads with persistence, and ships with CLI, Gradio web UI, and an Expo mobile app."
+              description="Conversational AI agent for structured symptom documentation. Built during the Berkeley AgentX Hackathon. Guides users through a schema-driven dialogue, supports multiple symptom threads with persistence."
               technologies={[
                 "Python",
                 "LangChain",
