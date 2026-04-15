@@ -2,17 +2,14 @@ import { Badge } from "@/components/ui/badge"
 import { Card } from "@/components/ui/card"
 import { Github, ExternalLink } from "lucide-react"
 import Image from "next/image"
+import type { Project } from "@/constants/projects"
 
 interface ProjectCardProps {
-  title: string
-  description: string
-  technologies: string[]
-  githubUrl?: string
-  liveUrl?: string
-  imageUrl?: string
+  project: Project
 }
 
-export function ProjectCard({ title, description, technologies, githubUrl, liveUrl, imageUrl }: ProjectCardProps) {
+export function ProjectCard({ project }: ProjectCardProps) {
+  const { title, description, technologies, githubUrl, liveUrl, imageUrl } = project
   const hasImage = !!imageUrl
 
   return (
@@ -21,7 +18,14 @@ export function ProjectCard({ title, description, technologies, githubUrl, liveU
         {/* Image Section */}
         {hasImage && (
           <div className="relative h-64 md:h-auto bg-muted">
-            <Image src={imageUrl} alt={title} fill className="object-cover" />
+            <Image
+              src={imageUrl}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, 50vw"
+              quality={90}
+              className="object-cover"
+            />
           </div>
         )}
 

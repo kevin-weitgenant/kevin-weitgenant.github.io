@@ -1,4 +1,5 @@
 import { ProjectCard } from "@/components/project-card"
+import { PROJECTS } from "@/constants/projects"
 import { Github, Linkedin } from "lucide-react"
 import { XIcon } from "@/components/x-icon"
 import Image from "next/image"
@@ -75,93 +76,9 @@ export default function PortfolioPage() {
           <h2 className="text-3xl font-bold mb-10">Featured Projects</h2>
 
           <div className="space-y-12">
-            <ProjectCard
-              title="LinkedIn Job Hunter"
-              description="AI-powered Chrome extension that discovers job opportunities hidden in LinkedIn posts. Searches posts via the LinkedIn API, filters noise with AI, extracts structured job data, and monitors for new opportunities in the background."
-              technologies={[
-                "Plasmo",
-                "React",
-                "TypeScript",
-                "Tailwind",
-                "shadcn/ui",
-                "Dexie.js",
-                "FastAPI",
-                "PostgreSQL",
-                "Docker",
-                "Groq",
-                "OpenAI",
-              ]}
-              githubUrl="https://github.com/kevin-weitgenant/linkedin-job-hunter"
-              liveUrl="https://chromewebstore.google.com/detail/posts-job-hunter-for-link/pchoidhnbdjchhopafgfkijjeomnandl?authuser=0&hl=en"
-              imageUrl="/Gemini_Generated_Image_uml9emuml9emuml9.png"
-            />
-
-            <ProjectCard
-              title="YT Learn"
-              description="Chat with YouTube videos for free using Chrome’s built-in Gemini Nano AI. Select specific chapters to focus your questions, keep everything private/on-device, and chat with multiple videos across tabs."
-              technologies={[
-                "Plasmo",
-                "React",
-                "TypeScript",
-                "Zustand",
-                "Gemini Nano",
-              ]}
-              githubUrl="https://github.com/kevin-weitgenant/YT-learn"
-              liveUrl="https://chromewebstore.google.com/detail/yt-learn/kilhldjihchdppcmkknhnccmahjjffgk"
-              imageUrl="https://img.youtube.com/vi/5KM-zwCP6eI/hqdefault.jpg"
-            />
-
-            <ProjectCard
-              title="Baymax (Berkeley AgentX Hackathon)"
-              description="Conversational AI agent for structured symptom documentation. Built during the Berkeley AgentX Hackathon. Guides users through a schema-driven dialogue, supports multiple symptom threads with persistence."
-              technologies={[
-                "Python",
-                "LangChain",
-                "LangGraph",
-                "SQLite",
-                "Gradio",
-                "FastAPI",
-                "Expo",
-                "Qdrant",
-                "RAG",
-              ]}
-              githubUrl="https://github.com/joohyeon/baymax_team_collab"
-              liveUrl="https://www.youtube.com/watch?v=vYhTR5bH-sc"
-            />
-
-            <ProjectCard
-              title="LinkedIn Posts Hunter (MCP Server)"
-              description="Model Context Protocol (MCP) server for automating LinkedIn post searching and tracking via your AI assistant (Cursor/Claude). Uses Playwright for authenticated scraping, stores everything locally in SQLite, and includes a React dashboard for filtering and application tracking."
-              technologies={[
-                "TypeScript",
-                "MCP",
-                "Playwright",
-                "SQLite",
-                "React",
-                "Express",
-                "Vite",
-                "TailwindCSS",
-              ]}
-              githubUrl="https://github.com/kevin-weitgenant/LinkedIn-Posts-Hunter-MCP-Server"
-              liveUrl="https://streamable.com/m6tvef?src=player-page-share"
-            />
-
-            <ProjectCard
-              title="Nano Tutor"
-              description="On-device Chrome extension that transforms YouTube videos into interactive learning. Built for the Google Chrome Built-in AI Challenge. Chat with videos and generate quizzes privately using Gemini Nano, with a lightweight RAG pipeline (local embeddings + vector search) for long transcripts."
-              technologies={[
-                "TypeScript",
-                "React",
-                "Plasmo",
-                "Gemini Nano",
-                "Transformers.js",
-                "WebGPU",
-                "IndexedDB",
-                "RAG",
-              ]}
-              githubUrl="https://github.com/kevin-weitgenant/nano-tutor"
-              liveUrl="https://devpost.com/software/videolearnai"
-            />
+            {PROJECTS.map((project) => (
+              <ProjectCard key={project.title} project={project} />
+            ))}
           </div>
         </section>
       </div>
